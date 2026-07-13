@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Almeida Kehl Advogados Associados — Advocacia de excelência em Jurerê Internacional, Florianópolis, SC. Direito do Trabalho, Civil, Famílias & Sucessões e Previdenciário.">
+  <title>Almeida Kehl Advogados Associados</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=EB+Garamond:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ══════════════════════════════════════════
+       TOKENS — Advocacia de Luxo Formal (V1)
+    ══════════════════════════════════════════ */
+    :root {
+      /* Cores primárias */
+      --navy:        #0B1929;
+      --navy-mid:    #142234;
+      --navy-soft:   #1E3050;
+      --gold:        #C9A357;
+      --gold-light:  #E8D5A3;
+      --gold-pale:   rgba(201,163,87,0.12);
+      --ivory:       #F8F5EF;
+      --cream:       #F2EDE4;
+      --white:       #FFFFFF;
+
+      /* Tipografia */
+      --ink:         #0D1520;
+      --ink-soft:    #2A3B4C;
+      --muted:       #7B8A96;
+      --muted-light: #A8B6C0;
+
+      /* Bordas */
+      --border-gold: rgba(201,163,87,0.22);
+      --border-dark: rgba(201,163,87,0.14);
+      --border-navy: rgba(11,25,41,0.12);
+
+      /* Gradientes */
+      --grad-gold:    linear-gradient(135deg, #E8D5A3 0%, #C9A357 55%, #A07A2A 100%);
+      --grad-navy:    linear-gradient(160deg, #0B1929 0%, #1E3050 100%);
+      --grad-hero:    linear-gradient(to right, rgba(11,25,41,0.92) 0%, rgba(11,25,41,0.72) 55%, rgba(11,25,41,0.25) 100%);
+      --grad-section: linear-gradient(180deg, #0B1929 0%, #142234 100%);
+
+      /* Sombras */
+      --shadow-sm:  0 2px 16px rgba(11,25,41,0.08);
+      --shadow-md:  0 8px 40px rgba(11,25,41,0.14);
+      --shadow-lg:  0 24px 80px rgba(11,25,41,0.22);
+      --shadow-gold: 0 8px 32px rgba(201,163,87,0.28);
+
+      /* Easing */
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --t:    all 0.48s var(--ease);
+
+      --radius:    8px;
+      --radius-lg: 14px;
+    }
+
+    /* ══════════════════════════════════════════
+       RESET
+    ══════════════════════════════════════════ */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      overflow-x: hidden;
+      font-size: 16px;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display:block; max-width:100%; }
+    a { text-decoration: none; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--ivory); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+
+    /* ══════════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════════ */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      padding: 22px 7%;
+      display: flex; align-items: center; justify-content: space-between;
+      background: transparent;
+      transition: var(--t);
+    }
+
+    .site-header.scrolled {
+      background: rgba(248,245,239,0.96);
+      backdrop-filter: blur(20px) saturate(160%);
+      padding: 14px 7%;
+      border-bottom: 1px solid var(--border-gold);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Logo */
+    .logo { display: flex; align-items: center; gap: 14px; }
+    
+    .logo-img { height: 52px; width: auto; }
+
+    .logo-text { display: flex; flex-direction: column; }
+
+    .logo-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px; font-weight: 600; color: var(--white);
+      letter-spacing: 0.04em; line-height: 1.2;
+      transition: var(--t);
+    }
+
+    .site-header.scrolled .logo-name { color: var(--ink); }
+
+    .logo-tagline {
+      font-size: 9px; font-weight: 500; letter-spacing: 3.5px;
+      text-transform: uppercase; color: var(--gold);
+      margin-top: 3px;
+    }
+
+    /* Nav */
+    nav { display: flex; align-items: center; gap: 4px; }
+
+    nav a {
+      font-size: 11px; font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,0.75);
+      padding: 8px 18px; border-radius: 2px;
+      transition: var(--t);
+    }
+
+    .site-header.scrolled nav a { color: var(--muted); }
+    nav a:hover { color: var(--gold) !important; }
+
+    .nav-separator {
+      width: 1px; height: 14px; background: rgba(255,255,255,0.2);
+      margin: 0 8px;
+    }
+
+    .site-header.scrolled .nav-separator { background: var(--border-gold); }
+
+    .btn-header {
+      font-size: 11px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 10px 24px; border-radius: 2px;
+      transition: var(--t);
+      white-space: nowrap;
+    }
+
+    .btn-header:hover {
+      background: var(--gold); color: var(--navy);
+      box-shadow: var(--shadow-gold);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 6px;
+      background: transparent; border: none; cursor: pointer; padding: 4px;
+    }
+    .hamburger span {
+      width: 26px; height: 1.5px; background: var(--white);
+      display: block; transition: var(--t);
+    }
+    .site-header.scrolled .hamburger span { background: var(--ink); }
+    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    .mobile-nav {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--navy); z-index: 899;
+      flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+      opacity: 0; transition: opacity 0.4s var(--ease);
+    }
+    .mobile-nav.open { display: flex; opacity: 1; }
+
+    .mobile-nav a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px; font-weight: 400; color: var(--ivory);
+      letter-spacing: 1px; padding: 10px 0;
+      border-bottom: 1px solid rgba(201,163,87,0.12);
+      width: 70%; text-align: center;
+      transition: var(--t);
+    }
+    .mobile-nav a:hover { color: var(--gold); }
+
+    .mobile-nav .btn-mobile-cta {
+      margin-top: 24px; font-size: 13px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      background: var(--gold); color: var(--navy);
+      padding: 16px 40px; border-radius: 2px;
+    }
+
+    /* ══════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════ */
+    .hero {
+      height: 100svh; min-height: 700px;
+      background-image: var(--grad-hero), url('jurere_beach.png');
+      background-size: cover; background-position: center 40%;
+      background-attachment: fixed;
+      display: flex; align-items: flex-end;
+      padding: 0 7% 9%;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--grad-gold); opacity: 0.9;
+    }
+
+    .hero-ornament {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 1px; height: 160px; background: linear-gradient(to bottom, transparent, rgba(201,163,87,0.3), transparent);
+      pointer-events: none;
+    }
+
+    .hero-content { max-width: 780px; position: relative; z-index: 2; }
+
+    .hero-label {
+      font-size: 10px; font-weight: 500; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--gold);
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 28px;
+    }
+    .hero-label::before { content: ''; width: 40px; height: 1px; background: var(--gold); opacity: 0.6; }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(46px, 6.5vw, 90px);
+      font-weight: 300; color: var(--white);
+      letter-spacing: -0.01em; line-height: 1.1;
+      margin-bottom: 28px;
+    }
+
+    .hero-title strong { font-weight: 600; display: block; }
+    .hero-title em { font-style: italic; color: var(--gold-light); }
+
+    .hero-rule { width: 60px; height: 1px; background: var(--gold); margin-bottom: 28px; opacity: 0.7; }
+
+    .hero-desc {
+      font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.72);
+      max-width: 540px; line-height: 1.8; margin-bottom: 44px;
+    }
+
+    .hero-cta-row { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+
+    .btn-primary-dark {
+      background: var(--grad-gold); color: var(--navy);
+      font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; padding: 17px 40px;
+      border-radius: 2px; transition: var(--t);
+      box-shadow: var(--shadow-gold);
+    }
+    .btn-primary-dark:hover { transform: translateY(-3px); box-shadow: 0 16px 50px rgba(201,163,87,0.45); }
+
+    .btn-ghost-white {
+      font-size: 11px; font-weight: 500; letter-spacing: 2.5px;
+      text-transform: uppercase; color: rgba(255,255,255,0.7);
+      display: flex; align-items: center; gap: 10px; transition: var(--t);
+    }
+    .btn-ghost-white:hover { color: var(--gold); gap: 16px; }
+
+    /* Hero bottom bar */
+    .hero-bottom-bar {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      display: flex; align-items: stretch;
+      border-top: 1px solid rgba(201,163,87,0.18);
+      background: rgba(11,25,41,0.75); backdrop-filter: blur(16px);
+    }
+
+    .hero-bar-item {
+      flex: 1; padding: 22px 32px;
+      display: flex; flex-direction: column; gap: 4px;
+      border-right: 1px solid rgba(201,163,87,0.12);
+    }
+    .hero-bar-item:last-child { border-right: none; }
+
+    .bar-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px; font-weight: 500; color: var(--gold); line-height: 1;
+    }
+    .bar-label {
+      font-size: 10px; font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,0.5);
+    }
+
+    /* ══════════════════════════════════════════
+       SECTIONS BASE
+    ══════════════════════════════════════════ */
+    section { padding: 120px 7%; }
+
+    .eyebrow {
+      font-size: 10px; font-weight: 600; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--gold);
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 18px;
+    }
+    .eyebrow::before { content: ''; width: 30px; height: 1px; background: var(--gold); opacity: 0.7; }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 4vw, 56px);
+      font-weight: 400; line-height: 1.18; margin-bottom: 22px;
+      letter-spacing: -0.01em; color: var(--ink);
+    }
+
+    .section-body {
+      font-size: 15.5px; font-weight: 300; color: var(--muted);
+      max-width: 560px; line-height: 1.8;
+    }
+
+    /* ══════════════════════════════════════════
+       QUEM SOMOS (Agora é a primeira seção após o Hero)
+    ══════════════════════════════════════════ */
+    #quem-somos { background: var(--cream); }
+
+    .about-grid {
+      display: grid; grid-template-columns: 5fr 7fr; gap: 90px; align-items: start;
+    }
+
+    .about-sticky { position: sticky; top: 120px; }
+
+    .about-desc { font-size: 15.5px; color: var(--muted); font-weight: 300; line-height: 1.85; margin-bottom: 24px; }
+
+    .btn-about {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--navy);
+      border-bottom: 1px solid var(--gold); padding-bottom: 4px;
+      transition: var(--t);
+    }
+    .btn-about:hover { color: var(--gold); gap: 18px; }
+
+    .about-right { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 32px; }
+
+    .profile-entry {
+      display: flex; flex-direction: column; gap: 20px;
+      padding: 24px; border: 1px solid rgba(201,163,87,0.15); border-radius: 6px;
+      background: var(--white);
+      align-items: start; transition: var(--t);
+      cursor: pointer;
+    }
+    .profile-entry:hover { background: rgba(201,163,87,0.03); border-color: rgba(201,163,87,0.3); transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+
+    .profile-img {
+      width: 100%; height: 280px; object-fit: cover; object-position: top;
+      transition: var(--t); border-radius: 4px;
+    }
+    .profile-entry:hover .profile-img { transform: scale(1.02); }
+
+    .profile-info { padding-top: 4px; }
+
+    .profile-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px; font-weight: 500; color: var(--ink);
+      line-height: 1.2; margin-bottom: 6px;
+    }
+
+    .profile-role {
+      font-size: 10px; font-weight: 600; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
+    }
+
+    .profile-oab {
+      font-size: 12px; color: var(--muted-light); font-weight: 400; margin-bottom: 16px;
+    }
+
+    .profile-rule {
+      width: 28px; height: 1px; background: var(--gold); margin-bottom: 16px; opacity: 0.5;
+    }
+
+    .profile-bio {
+      font-size: 14px; color: var(--muted); font-weight: 300; line-height: 1.75;
+    }
+    
+    .profile-read-more {
+      margin-top: 12px; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); display: inline-flex; align-items: center; gap: 6px;
+    }
+    .profile-entry:hover .profile-read-more { color: var(--gold); gap: 10px; }
+
+    /* ══════════════════════════════════════════
+       MODAL DE BIOGRAFIA
+    ══════════════════════════════════════════ */
+    .bio-modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(11,25,41,0.85); backdrop-filter: blur(10px);
+      z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden; transition: var(--t);
+    }
+    .bio-modal-overlay.active { opacity: 1; visibility: visible; }
+
+    .bio-modal-content {
+      background: var(--ivory);
+      width: 90%; max-width: 700px; max-height: 90vh; overflow-y: auto;
+      border-radius: 4px; position: relative;
+      padding: 56px; border: 1px solid var(--border-gold);
+      transform: translateY(40px); transition: var(--t);
+      box-shadow: var(--shadow-lg);
+    }
+    .bio-modal-overlay.active .bio-modal-content { transform: translateY(0); }
+
+    .bio-modal-close {
+      position: absolute; top: 24px; right: 24px;
+      background: var(--cream); border: 1px solid var(--border-gold);
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: var(--ink); transition: var(--t);
+    }
+    .bio-modal-close:hover { background: var(--navy); color: var(--gold); transform: rotate(90deg); }
+
+    .bio-modal-header { display: flex; gap: 32px; margin-bottom: 32px; align-items: center; }
+    .bio-modal-img { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 2px solid var(--gold); }
+    .bio-modal-title { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 500; color: var(--ink); line-height: 1.1; margin-bottom: 8px;}
+    .bio-modal-role { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
+    .bio-modal-oab { font-size: 13px; color: var(--muted-light); margin-top: 4px; }
+
+    .bio-modal-body p { font-size: 15.5px; color: var(--ink-soft); font-weight: 300; line-height: 1.8; margin-bottom: 16px; }
+
+    /* ══════════════════════════════════════════
+       SOBRE — MANIFESTO
+    ══════════════════════════════════════════ */
+    #manifesto { background: var(--ivory); }
+
+    .manifesto-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;
+    }
+
+    .manifesto-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 300; font-style: italic; line-height: 1.3;
+      color: var(--ink); letter-spacing: -0.01em;
+      border-left: 2px solid var(--gold); padding-left: 36px; margin:0;
+    }
+
+    .manifesto-quote strong { font-weight: 600; font-style: normal; }
+
+    .manifesto-values { display: flex; flex-direction: column; gap: 0; }
+
+    .value-row {
+      display: flex; align-items: flex-start; gap: 28px;
+      padding: 28px 0; border-bottom: 1px solid var(--border-navy);
+      transition: var(--t);
+    }
+    .value-row:first-child { border-top: 1px solid var(--border-navy); }
+    .value-row:hover { padding-left: 8px; }
+
+    .value-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px; font-weight: 600; color: var(--gold);
+      letter-spacing: 1px; flex-shrink: 0; margin-top: 4px;
+    }
+
+    .value-content h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px; font-weight: 600; color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .value-content p { font-size: 14px; color: var(--muted); font-weight: 300; line-height: 1.7; }
+
+    /* ══════════════════════════════════════════
+       ESPECIALIDADES — DARK
+    ══════════════════════════════════════════ */
+    #especialidades {
+      background: var(--grad-section);
+      position: relative; overflow: hidden;
+    }
+
+    #especialidades::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(201,163,87,0.04) 79px, rgba(201,163,87,0.04) 80px),
+        repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(201,163,87,0.04) 79px, rgba(201,163,87,0.04) 80px);
+      pointer-events: none;
+    }
+
+    .spec-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      flex-wrap: wrap; gap: 32px; margin-bottom: 80px; position: relative; z-index: 2;
+    }
+
+    .spec-header .eyebrow { color: var(--gold); }
+    .spec-header .section-title { color: var(--ivory); margin-bottom: 0; }
+    .spec-header .section-body { color: rgba(242,237,228,0.55); font-size: 14px; max-width: 320px; text-align: right; }
+
+    .spec-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1px; background: rgba(201,163,87,0.12);
+      border: 1px solid rgba(201,163,87,0.12);
+      position: relative; z-index: 2;
+    }
+
+    .spec-item {
+      background: rgba(11,25,41,0.85); backdrop-filter: blur(8px);
+      padding: 52px 42px; transition: var(--t);
+      cursor: default; position: relative; overflow: hidden;
+    }
+    .spec-item::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(201,163,87,0.06), transparent);
+      opacity: 0; transition: var(--t);
+    }
+    .spec-item:hover { background: rgba(20,34,52,0.98); }
+    .spec-item:hover::after { opacity: 1; }
+    .spec-item:hover .spec-num { color: var(--gold-light); }
+    .spec-item:hover h3 { color: var(--gold-light); }
+
+    .spec-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px; font-weight: 500; color: rgba(201,163,87,0.4);
+      letter-spacing: 2px; margin-bottom: 48px;
+      display: block; transition: var(--t);
+    }
+    .spec-rule {
+      width: 24px; height: 1px; background: var(--gold);
+      margin-bottom: 24px; transition: var(--t);
+    }
+    .spec-item:hover .spec-rule { width: 40px; }
+
+      .spec-item h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 32px; font-weight: 500; color: var(--ivory);
+        line-height: 1.2; margin-bottom: 18px; transition: var(--t);
+      }
+    .spec-item p {
+      font-size: 14px; color: rgba(242,237,228,0.5);
+      font-weight: 300; line-height: 1.75;
+    }
+
+    .spec-arrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 32px; font-size: 11px; font-weight: 500;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); transition: var(--t);
+    }
+    .spec-arrow:hover { gap: 16px; }
+
+    /* ══════════════════════════════════════════
+       DIFERENCIAIS STRIP
+    ══════════════════════════════════════════ */
+    .diferenciais { background: var(--navy); padding: 0; }
+    .diferenciais-inner {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(201,163,87,0.12);
+    }
+    .dif-item {
+      padding: 70px 44px; border-right: 1px solid rgba(201,163,87,0.08); transition: var(--t);
+    }
+    .dif-item:last-child { border-right: none; }
+    .dif-item:hover { background: rgba(201,163,87,0.04); }
+    .dif-icon { margin-bottom: 28px; color: var(--gold); opacity: 0.8; }
+    .dif-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--ivory); margin-bottom: 12px; line-height: 1.3;
+    }
+    .dif-text { font-size: 13.5px; color: rgba(242,237,228,0.45); font-weight: 300; line-height: 1.75; }
+
+    /* ══════════════════════════════════════════
+       CONTATO E MAPA
+    ══════════════════════════════════════════ */
+    #contato { background: var(--ivory); padding-bottom: 0; }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1.25fr; gap: 100px; align-items: start; padding-bottom: 120px; }
+    .contact-left { padding-top: 8px; }
+    .contact-details { margin-top: 48px; display: flex; flex-direction: column; gap: 28px; }
+    .c-detail-label {
+      font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
+    }
+    .c-detail-value { font-size: 15px; color: var(--ink-soft); font-weight: 300; }
+    .c-detail-rule { width: 24px; height: 1px; background: var(--border-gold); margin-top: 16px; }
+
+    /* Formulário */
+    .contact-form-wrap {
+      background: var(--white); border: 1px solid var(--border-gold); padding: 60px 52px; box-shadow: var(--shadow-md);
+    }
+    .form-head { margin-bottom: 40px; padding-bottom: 32px; border-bottom: 1px solid var(--border-navy); }
+    .form-head h3 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 400; color: var(--ink); margin-bottom: 8px; }
+    .form-head p { font-size: 14px; color: var(--muted); font-weight: 300; }
+    .form-field { margin-bottom: 22px; }
+    .form-field label {
+      display: block; font-size: 10px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+    }
+    .form-field input, .form-field select, .form-field textarea {
+      width: 100%; background: var(--ivory); border: none; border-bottom: 1px solid var(--border-gold); padding: 14px 0; font-family: 'Inter', sans-serif; font-size: 15px; color: var(--ink); font-weight: 300; outline: none; transition: var(--t); appearance: none; border-radius: 0;
+    }
+    .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-bottom-color: var(--navy); }
+    .form-field textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .btn-submit-form {
+      width: 100%; margin-top: 12px; background: var(--navy); color: var(--gold); border: 1px solid var(--navy); padding: 18px 40px; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; transition: var(--t);
+    }
+    .btn-submit-form:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); box-shadow: var(--shadow-gold); }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    footer { background: var(--navy); border-top: 1px solid rgba(201,163,87,0.14); }
+    .footer-main { padding: 80px 7% 60px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; border-bottom: 1px solid rgba(201,163,87,0.08); }
+    .footer-brand .logo-name { color: var(--ivory); }
+    .footer-brand p { font-size: 13.5px; color: rgba(242,237,228,0.4); font-weight: 300; margin-top: 20px; line-height: 1.85; max-width: 300px; }
+    .footer-col h5 { font-size: 9px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-col ul li a { font-size: 13px; color: rgba(242,237,228,0.45); font-weight: 300; transition: var(--t); }
+    .footer-col ul li a:hover { color: var(--gold-light); padding-left: 6px; }
+    .footer-bottom { padding: 24px 7%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-bottom p { font-size: 12px; color: rgba(242,237,228,0.25); font-weight: 300; }
+    .footer-oab {
+      display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(201,163,87,0.5); border: 1px solid rgba(201,163,87,0.15); padding: 6px 16px;
+    }
+
+    /* ══════════════════════════════════════════
+       WHATSAPP
+    ══════════════════════════════════════════ */
+    .wa-btn {
+      position: fixed; bottom: 36px; right: 36px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25D366; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(37,211,102,0.45); transition: var(--t);
+    }
+    .wa-btn:hover { transform: scale(1.1); box-shadow: 0 14px 40px rgba(37,211,102,0.6); }
+    .wa-pulse {
+      position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 2px solid #25D366; animation: waPulse 2.2s ease-out infinite;
+    }
+    @keyframes waPulse { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(1.75); opacity: 0; } }
+
+    /* ══════════════════════════════════════════
+       REVEAL & RESPONSIVE
+    ══════════════════════════════════════════ */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.75s var(--ease), transform 0.75s var(--ease); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 1100px) {
+      .manifesto-inner, .about-grid, .contact-layout { grid-template-columns: 1fr; gap: 60px; }
+      .about-sticky { position: static; }
+      .footer-main, .diferenciais-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 80px 5%; }
+      nav, .btn-header { display: none; }
+      .hamburger { display: flex; }
+      .hero { background-attachment: scroll; padding: 0 5% 8%; }
+      .hero-title { font-size: 38px; }
+      .hero-bottom-bar { display: none; }
+      .spec-grid { grid-template-columns: 1fr; background: none; border: none; gap: 1px; }
+      .form-row, .diferenciais-inner, .footer-main { grid-template-columns: 1fr; }
+      .contact-layout { padding-bottom: 80px; }
+      .contact-form-wrap { padding: 36px 28px; }
+      .profile-entry { gap:20px; padding:20px;}
+      .profile-img { width: 100%; height: 260px; }
+      .manifesto-quote { font-size: 28px; }
+      .bio-modal-content { padding: 32px 24px; width: 95%; }
+      .bio-modal-header { flex-direction: column; gap: 16px; text-align: center; }
+      .bio-modal-img { margin: 0 auto; }
+      .gold-banner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .hero-title { font-size: 32px; }
+      .hero-cta-row, .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* REVIEWS */
+    .reviews-section { background: var(--ivory); padding: 100px 7%; border-top: 1px solid rgba(201,163,87,0.1); }
+    .reviews-header { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 60px; }
+    .google-stars { color: #fbbc04; font-size: 24px; letter-spacing: 2px; margin-bottom: 12px; }
+    .google-rating { font-size: 18px; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 8px; }
+    .google-rating span { font-weight: 400; color: var(--muted); font-size: 15px; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
+    .review-card { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.04); transition: var(--t); }
+    .review-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
+    .reviewer-info { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+    .reviewer-avatar { width: 48px; height: 48px; border-radius: 50%; background: #FF5722; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; text-transform: uppercase; }
+    .reviewer-details h5 { font-size: 16px; color: var(--ink); margin-bottom: 2px; }
+    .reviewer-details p { font-size: 13px; color: var(--muted); margin: 0; }
+    .review-stars { color: #fbbc04; font-size: 14px; margin-bottom: 16px; }
+    .review-text { font-size: 15px; color: var(--ink); line-height: 1.7; font-weight: 300; font-style: italic; }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header" id="site-header">
+  <a href="#" class="logo">
+    <img src="assets/logo_vetorizada.svg" class="logo-img" alt="Almeida Kehl Advogados Associados">
+    <div class="logo-text">
+      <span class="logo-name">Almeida Kehl</span>
+      <span class="logo-tagline">Advogados Associados</span>
+    </div>
+  </a>
+
+  <nav>
+    <a href="#quem-somos">Equipe</a>
+    <div class="nav-separator"></div>
+    <a href="#manifesto">O Escritório</a>
+    <div class="nav-separator"></div>
+    <a href="#especialidades">Atuação</a>
+    <div class="nav-separator"></div>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <a href="https://wa.me/5548999999999" class="btn-header" target="_blank">Consulta</a>
+
+  <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#quem-somos">Equipe</a>
+  <a href="#manifesto">O Escritório</a>
+  <a href="#especialidades">Atuação</a>
+  <a href="#contato">Contato</a>
+  <a href="https://wa.me/5548999999999" class="btn-mobile-cta" target="_blank">Agendar Consulta</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-ornament"></div>
+
+  <div class="hero-content">
+    <div class="hero-label reveal">Advocacia Especializada · Florianópolis — SC</div>
+
+    <h1 class="hero-title reveal" style="transition-delay:0.1s">
+      Excelência Jurídica<br>
+      <strong>ao seu <em>serviço.</em></strong>
+    </h1>
+
+    <div class="hero-rule reveal" style="transition-delay:0.2s"></div>
+
+    <p class="hero-desc reveal" style="transition-delay:0.25s">
+      Escritório boutique de advocacia com equipe especializada, comprometido com a defesa rigorosa dos seus direitos através de assessoria ética, técnica e personalizada.
+    </p>
+
+    <div class="hero-cta-row reveal" style="transition-delay:0.35s">
+      <a href="#contato" class="btn-primary-dark">Agendar Consulta</a>
+      <a href="#especialidades" class="btn-ghost-white">
+        Nossas Especialidades
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-bottom-bar">
+    <div class="hero-bar-item">
+      <span class="bar-num" id="stat-anos"><span class="counter" data-target="10">0</span><sup style="font-size:18px">+</sup></span>
+      <span class="bar-label">Anos de Atuação</span>
+    </div>
+    <div class="hero-bar-item">
+      <span class="bar-num"><span class="counter" data-target="5">0</span></span>
+      <span class="bar-label">Advogadas Especialistas</span>
+    </div>
+    <div class="hero-bar-item">
+      <span class="bar-num"><span class="counter" data-target="4">0</span></span>
+      <span class="bar-label">Áreas de Atuação</span>
+    </div>
+    <div class="hero-bar-item">
+      <span class="bar-num"><span class="counter" data-target="100">0</span>%</span>
+      <span class="bar-label">Sigilo & Ética</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ QUEM SOMOS / EQUIPE ══ -->
+<section id="quem-somos">
+  <div class="about-grid">
+    <div class="about-sticky">
+      <div class="eyebrow reveal">Nossa Equipe</div>
+      <h2 class="section-title reveal" style="transition-delay:0.1s">As Advogadas do Escritório</h2>
+      <p class="about-desc reveal" style="transition-delay:0.2s">
+        Uma equipe feminina de alta performance, formada por advogadas com OAB ativa em Santa Catarina, Paraná, Mato Grosso do Sul e São Paulo, unidas pelo compromisso com a excelência jurídica.
+      </p>
+      <p class="about-desc reveal" style="transition-delay:0.25s">
+        Atendemos clientes nacionais e estrangeiros de forma presencial em Jurerê Internacional, Florianópolis, e remotamente em todo o Brasil.
+      </p>
+      <a href="#contato" class="btn-about reveal" style="transition-delay:0.3s">
+        Agendar Consulta
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="about-right">
+      <!-- Silvana -->
+      <div class="profile-entry reveal" onclick="openBio(this)">
+        <img src="wp-content/uploads/2024/04/silvana.jpg" alt="Silvana Almeida Kehl" class="profile-img" onerror="this.style.display='none'">
+        <div class="profile-info">
+          <p class="profile-role">Advogada Sócia</p>
+          <h3 class="profile-name">Silvana Almeida Kehl</h3>
+          <p class="profile-oab">OAB/SC 37.133</p>
+          <div class="profile-rule"></div>
+          <p class="profile-bio">Advogada sênior responsável pelas áreas de Direito do Trabalho e Direito de Família. Reconhecida pela firmeza na condução de litígios complexos.</p>
+          <span class="profile-read-more">Ler trajetória completa <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
+        <div class="profile-full-bio" style="display:none;">
+          <p>Sócia fundadora do Almeida Kehl Advogados Associados, escritório de destaque na área jurídica, consolidado desde 2013 no norte da Ilha, em Canasvieiras.</p>
+          <p>Especialista em Direito Previdenciário, Direito e Processo do Trabalho, Direito de Família e Sucessões, além de possuir MBA em Recursos Humanos e licenciatura em Pedagogia. Com mais de uma década de experiência, Silvana construiu uma carreira sólida e de referência, marcada pela liderança, expertise e capacidade de inovação. Reconhecida pela entrega de soluções jurídicas personalizadas e de alto impacto, é comprometida com a ética, integridade e proteção dos direitos de seus clientes.</p>
+        </div>
+      </div>
+
+      <!-- Wellen -->
+      <div class="profile-entry reveal" style="transition-delay:0.1s" onclick="openBio(this)">
+        <img src="wp-content/uploads/elementor/thumbs/Wellen-Oliveira-Cruz-scaled-r1rkhtesypynjqekqb2q8nqj8257geuxu83r1qh1cg.jpg" alt="Wellen Oliveira Cruz" class="profile-img" onerror="this.style.display='none'">
+        <div class="profile-info">
+          <p class="profile-role">Advogada Sócia</p>
+          <h3 class="profile-name">Wellen Oliveira Cruz</h3>
+          <p class="profile-oab">OAB/SC 31.597 e OAB/PR 105.227-A</p>
+          <div class="profile-rule"></div>
+          <p class="profile-bio">Foco especializado em demandas Cíveis e Direito Previdenciário, assessorando empresas e segurados perante o Instituto Nacional do Seguro Social.</p>
+          <span class="profile-read-more">Ler trajetória completa <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
+        <div class="profile-full-bio" style="display:none;">
+          <p>Pós-graduada em Direito e Processo do Trabalho. Membro da Comissão de Direito do Trabalho da OAB/SC. Com 14 anos de atuação na área trabalhista. Advogada na Almeida Kehl Advogados Associados desde 2023.</p>
+        </div>
+      </div>
+
+      <!-- Camila -->
+      <div class="profile-entry reveal" style="transition-delay:0.2s" onclick="openBio(this)">
+        <img src="wp-content/uploads/elementor/thumbs/Camila-Arevalo-scaled-r1rkyf85pcp0nqa7rhhgagvp14anfws84f0k9punf4.jpeg" alt="Camila Arévalo" class="profile-img" onerror="this.style.display='none'">
+        <div class="profile-info">
+          <p class="profile-role">Advogada Associada</p>
+          <h3 class="profile-name">Camila Arévalo</h3>
+          <p class="profile-oab">OAB/MS 28.450</p>
+          <div class="profile-rule"></div>
+          <p class="profile-bio">Atua fortemente com Direito Internacional, orientando estrangeiros em pedidos de visto, cidadania e constituição de empresas no Brasil.</p>
+          <span class="profile-read-more">Ler trajetória completa <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
+        <div class="profile-full-bio" style="display:none;">
+          <p>Com ampla experiência na área jurídica, atuou na Advocacia-Geral da União e no Tribunal de Justiça, onde adquiriu profundo conhecimento jurídico. Especialista em Direito Civil, destaca-se na defesa de interesses individuais e empresariais, oferecendo soluções estratégicas e eficazes. Atualmente, aprimora sua expertise como pós-graduanda em Direito Previdenciário, consolidando sua atuação na proteção dos direitos sociais.</p>
+        </div>
+      </div>
+
+      <!-- Deborah -->
+      <div class="profile-entry reveal" style="transition-delay:0.3s" onclick="openBio(this)">
+        <img src="wp-content/uploads/elementor/thumbs/WhatsApp-Image-2025-11-12-at-09.34.10-reoy9eqww74bfkazhhhn1zrgg9ktfecrm8p9e1bg28.jpeg" alt="Deborah Salatino" class="profile-img" onerror="this.style.display='none'">
+        <div class="profile-info">
+          <p class="profile-role">Advogada Associada</p>
+          <h3 class="profile-name">Deborah Salatino Trivellato</h3>
+          <p class="profile-oab">OAB/SP 402.653</p>
+          <div class="profile-rule"></div>
+          <p class="profile-bio">Profissional voltada para o consultivo trabalhista e responsabilidade civil, trazendo experiência do mercado corporativo paulistano.</p>
+          <span class="profile-read-more">Ler trajetória completa <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
+        <div class="profile-full-bio" style="display:none;">
+          <p>Graduada em Direito pela Universidade Presbiteriana Mackenzie (São Paulo) e especialista em Direito Civil, dedica sua atuação à defesa de interesses nas áreas Cível, Empresarial, Contratual e de Propriedade Intelectual, com compromisso, técnica e excelência.</p>
+        </div>
+      </div>
+
+      <!-- Juliana -->
+      <div class="profile-entry reveal" style="transition-delay:0.4s" onclick="openBio(this)">
+        <img src="wp-content/uploads/elementor/thumbs/Design-sem-nome-_8_-reow0pbs3an0kvj9r3ltguxoa9d9iyyg6s7ezqzcb4.webp" alt="Juliana Conradi" class="profile-img" onerror="this.style.display='none'">
+        <div class="profile-info">
+          <p class="profile-role">Assessora Jurídica</p>
+          <h3 class="profile-name">Juliana Teresinha Conradi</h3>
+          <p class="profile-oab">Setor de Controladoria</p>
+          <div class="profile-rule"></div>
+          <p class="profile-bio">Garante a fluidez de todos os andamentos processuais, protocolos e acompanhamento de prazos, atuando como o motor operacional da equipe.</p>
+          <span class="profile-read-more">Ler trajetória completa <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+        </div>
+        <div class="profile-full-bio" style="display:none;">
+          <p>Assessora Jurídica com atuação nas áreas Cível e de Família, com ênfase em inventários e partilhas. Contribui para o desenvolvimento de soluções jurídicas eficientes e alinhadas às necessidades de cada cliente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MANIFESTO ══ -->
+<section id="manifesto" style="background:var(--ivory);">
+  <div class="manifesto-inner">
+    <div>
+      <div class="eyebrow reveal">O Escritório</div>
+      <blockquote class="manifesto-quote reveal" style="transition-delay:0.1s">
+        "Tratamos cada caso com a <strong>seriedade e dedicação</strong> que seus direitos <em>merecem.</em>"
+      </blockquote>
+    </div>
+
+    <div class="manifesto-values">
+      <div class="value-row reveal">
+        <div class="value-content">
+          <h4>Ética Inabalável</h4>
+          <p>Atuação pautada pelo Código de Ética da OAB, com total transparência nos honorários e nas estratégias adotadas em cada fase do processo.</p>
+        </div>
+      </div>
+      <div class="value-row reveal" style="transition-delay:0.1s">
+        <div class="value-content">
+          <h4>Sigilo Absoluto</h4>
+          <p>Confidencialidade total garantida em todos os atendimentos, com protocolos rígidos de proteção às informações do cliente.</p>
+        </div>
+      </div>
+      <div class="value-row reveal" style="transition-delay:0.2s">
+        <div class="value-content">
+          <h4>Precisão Técnica</h4>
+          <p>Equipe em constante atualização, acompanhando jurisprudências, reformas legislativas e tendências dos Tribunais Superiores.</p>
+        </div>
+      </div>
+      <div class="value-row reveal" style="transition-delay:0.3s">
+        <div class="value-content">
+          <h4>Atenção Personalizada</h4>
+          <p>Cada cliente recebe atendimento individualizado. Sem modelos genéricos — apenas estratégias construídas para o seu caso específico.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ESPECIALIDADES ══ -->
+<section id="especialidades">
+  <div class="spec-header reveal">
+    <div>
+      <div class="eyebrow">Áreas de Prática</div>
+      <h2 class="section-title" style="color:var(--ivory)">Especialidades<br>Jurídicas</h2>
+    </div>
+    <p class="section-body" style="color:rgba(242,237,228,0.45); text-align:right;">
+      Atuação técnica e estratégica em múltiplas vertentes do Direito, com foco em resultado e segurança jurídica.
+    </p>
+  </div>
+
+  <div class="spec-grid">
+    <div class="spec-item reveal">
+      <h3>Direito do Trabalho</h3>
+      <div class="spec-rule"></div>
+      <h4 style="color:var(--gold); font-size:13px; margin-bottom:12px; letter-spacing:1px; text-transform:uppercase;">Relações Trabalhistas</h4>
+      <p>Consultoria preventiva e litigiosa em ações trabalhistas, reclamações, acordos, contratos e compliance trabalhista. Defesa de empregadores e trabalhadores com estratégia eficiente.</p>
+      <a href="https://wa.me/5548988221886" target="_blank" class="spec-arrow">
+        Consultar
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="spec-item reveal" style="transition-delay:0.1s">
+      <h3>Direito Civil</h3>
+      <div class="spec-rule"></div>
+      <h4 style="color:var(--gold); font-size:13px; margin-bottom:12px; letter-spacing:1px; text-transform:uppercase;">Contratos & Responsabilidade</h4>
+      <p>Elaboração e revisão de contratos civis e empresariais, responsabilidade civil e assessoria a estrangeiros para residência, naturalização e cidadania brasileira.</p>
+      <a href="https://wa.me/5548988221886" target="_blank" class="spec-arrow">
+        Consultar
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="spec-item reveal" style="transition-delay:0.2s">
+      <h3>Famílias & Sucessões</h3>
+      <div class="spec-rule"></div>
+      <h4 style="color:var(--gold); font-size:13px; margin-bottom:12px; letter-spacing:1px; text-transform:uppercase;">Direito Familista</h4>
+      <p>Divórcios, partilha de bens, guarda de filhos, inventários judiciais e extrajudiciais, testamentos e planejamento sucessório com sensibilidade e sigilo.</p>
+      <a href="https://wa.me/5548988221886" target="_blank" class="spec-arrow">
+        Consultar
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <div class="spec-item reveal" style="transition-delay:0.3s">
+      <h3>Direito Previdenciário</h3>
+      <div class="spec-rule"></div>
+      <h4 style="color:var(--gold); font-size:13px; margin-bottom:12px; letter-spacing:1px; text-transform:uppercase;">Previdência & Benefícios</h4>
+      <p>Concessão e revisão de benefícios do INSS, aposentadorias por idade, tempo de contribuição, invalidez e BPC/LOAS. Planejamento estratégico previdenciário.</p>
+      <a href="https://wa.me/5548988221886" target="_blank" class="spec-arrow">
+        Consultar
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DIFERENCIAIS STRIP ══ -->
+<div class="diferenciais">
+  <div class="diferenciais-inner">
+    <div class="dif-item reveal">
+      <div class="dif-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <h4 class="dif-title">Sigilo Profissional</h4>
+      <p class="dif-text">Confidencialidade absoluta garantida pelo código deontológico da advocacia brasileira.</p>
+    </div>
+
+    <div class="dif-item reveal" style="transition-delay:0.1s">
+      <div class="dif-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+          <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+        </svg>
+      </div>
+      <h4 class="dif-title">Atendimento Ágil</h4>
+      <p class="dif-text">Respostas dentro de 24h úteis. Presencial em Canasvieiras ou online por videoconferência.</p>
+    </div>
+
+    <div class="dif-item reveal" style="transition-delay:0.2s">
+      <div class="dif-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </div>
+      <h4 class="dif-title">Análise Precisa</h4>
+      <p class="dif-text">Cada caso é estudado com rigor técnico antes da definição da estratégia processual.</p>
+    </div>
+
+    <div class="dif-item reveal" style="transition-delay:0.3s">
+      <div class="dif-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+        </svg>
+      </div>
+      <h4 class="dif-title">Equipe Dedicada</h4>
+      <p class="dif-text">Cinco profissionais especializadas com atualização contínua em legislação e jurisprudência.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ AVALIAÇÕES ══ -->
+<section id="avaliacoes" class="reviews-section">
+  <div class="reviews-header reveal">
+    <div class="eyebrow">Reputação de Excelência</div>
+    <h2 class="section-title">Aprovado por nossos clientes</h2>
+    <div class="google-stars">★★★★★</div>
+    <div class="google-rating">5,0 <span>(162 avaliações no Google)</span></div>
+  </div>
+  
+  <div class="reviews-grid">
+    <div class="review-card reveal" style="transition-delay:0.1s">
+      <div class="reviewer-info">
+        <div class="reviewer-avatar">S</div>
+        <div class="reviewer-details">
+          <h5>sonia siqueira</h5>
+          <p>2 avaliações</p>
+        </div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Só tenho elogios e agradecimento a Dra Silvana, sempre educada e atenciosamente, seu profissionalismo é implacável, super indico, equipe nota 10!"</p>
+    </div>
+    
+    <div class="review-card reveal" style="transition-delay:0.2s">
+      <div class="reviewer-info">
+        <div class="reviewer-avatar" style="background: url('https://ui-avatars.com/api/?name=Ona+Godoy&background=random') center/cover;">O</div>
+        <div class="reviewer-details">
+          <h5>ona godoy</h5>
+          <p>7 avaliações · 4 fotos</p>
+        </div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Excelente equipe de profissionais!! Sempre prontos para ajudar com um serviço de primeira qualidade!! Eu os recomendo fortemente. A advogada Silvana é uma mulher poderosa, eficiente, maravilhosa e um ser humano excelente!! Grato pelo seu trabalho e apoio inabalável 👏👏👏 Obrigado 🙏"</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTATO ══ -->
+<section id="contato" style="background:var(--cream);">
+  <div class="contact-layout">
+    <div class="contact-left">
+      <div class="eyebrow reveal">Contato</div>
+      <h2 class="section-title reveal" style="transition-delay:0.1s">
+        Inicie sua<br>
+        <em>Consulta Jurídica</em>
+      </h2>
+      <p class="section-body reveal" style="transition-delay:0.2s">
+        Preencha o formulário e nossa equipe entrará em contato para agendar sua consulta, de forma presencial ou por videoconferência.
+      </p>
+
+      <div class="contact-details">
+        <div class="c-detail reveal" style="transition-delay:0.25s">
+          <p class="c-detail-label">Localização</p>
+          <p class="c-detail-value">R. das Algas, 173 - Sl 04<br>Jurerê Internacional, Florianópolis - SC, 88053-505<br>
+            <a href="https://maps.app.goo.gl/YPpSvymLKoysyiJG6" target="_blank" style="color:var(--gold); font-size:12px; margin-top:8px; display:inline-block; border-bottom: 1px solid var(--gold); transition: var(--t);">Ver no Google Maps &rarr;</a>
+          </p>
+          <div class="c-detail-rule"></div>
+        </div>
+
+        <div class="c-detail reveal" style="transition-delay:0.32s">
+          <p class="c-detail-label">Atendimento</p>
+          <p class="c-detail-value">Presencial e Online (Videoconferência)</p>
+          <div class="c-detail-rule"></div>
+        </div>
+
+        <div class="c-detail reveal" style="transition-delay:0.39s">
+          <p class="c-detail-label">WhatsApp</p>
+          <p class="c-detail-value">Disponível para pronto atendimento</p>
+          <div class="c-detail-rule"></div>
+        </div>
+
+        <div class="c-detail reveal" style="transition-delay:0.46s">
+          <p class="c-detail-label">Registro</p>
+          <p class="c-detail-value">OAB/SC · OAB/PR · OAB/SP · OAB/MS</p>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form-wrap reveal" style="transition-delay:0.2s"
+      onsubmit="event.preventDefault();
+        this.innerHTML = '<div style=\'text-align:center;padding:80px 0\'><svg width=\'52\' height=\'52\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'#C9A357\' stroke-width=\'1.5\'><path d=\'M22 11.08V12a10 10 0 11-5.93-9.14\'/><polyline points=\'22 4 12 14.01 9 11.01\'/></svg><h3 style=\'font-family:Cormorant Garamond,serif;font-size:30px;font-weight:400;color:#0D1520;margin-top:20px\'>Mensagem recebida.</h3><p style=\'font-size:14px;color:#7B8A96;margin-top:10px;font-weight:300\'>Nossa equipe entrará em contato em até 24 horas úteis.</p></div>'">
+      <div class="form-head">
+        <h3>Formulário de Contato</h3>
+        <p>Todos os dados são tratados com absoluto sigilo e confidencialidade.</p>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="f_name">Nome Completo</label>
+          <input type="text" id="f_name" placeholder="Seu nome" required>
+        </div>
+        <div class="form-field">
+          <label for="f_email">E-mail</label>
+          <input type="email" id="f_email" placeholder="seu@email.com" required>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="f_area">Área Jurídica</label>
+        <select id="f_area" required>
+          <option value="" disabled selected>Selecione a área de interesse</option>
+          <option>Direito do Trabalho</option>
+          <option>Direito Civil e Contratos</option>
+          <option>Direito de Família e Sucessões</option>
+          <option>Direito Previdenciário</option>
+          <option>Assessoria para Estrangeiros</option>
+          <option>Outra área</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="f_message">Descrição do Caso</label>
+        <textarea id="f_message" placeholder="Descreva brevemente a situação para que possamos preparar o melhor atendimento." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit-form">Enviar Solicitação</button>
+    </form>
+  </div>
+</section>
+
+<!-- ══ MAPA & INFO BANNER ══ -->
+<div style="display: flex; flex-direction: column; position: relative;">
+  <iframe src="https://maps.google.com/maps?q=R.+das+Algas,+173+-+Sl+04+-+Jurer%C3%AA+Internacional,+Florian%C3%B3polis+-+SC,+88053-505&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="#" class="logo">
+        <img src="assets/logo_vetorizada.svg" class="logo-img" alt="Almeida Kehl Advogados Associados">
+        <div class="logo-text">
+          <span class="logo-name">Almeida Kehl</span>
+          <span class="logo-tagline">Advogados Associados</span>
+        </div>
+      </a>
+      <p>Escritório de advocacia com equipe especializada em Direito do Trabalho, Civil, Famílias & Sucessões e Previdenciário. Jurerê Internacional, Florianópolis — SC.</p>
+      
+      <div style="margin-top: 36px; display: flex; align-items: center; gap: 16px;">
+        <img src="assets/LOGO-OAB-OFICIAL.png" alt="Selo OAB" style="height: 48px; object-fit: contain;">
+        <p style="font-size: 11.5px; font-weight: 300; line-height: 1.6; color: rgba(242,237,228,0.5); margin: 0; max-width: 220px;">
+          Atuação ética e transparente, em estrita conformidade com o Provimento 205/2021 e Código de Ética da OAB.
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h5>O Escritório</h5>
+      <ul>
+        <li><a href="#manifesto">Nossa Missão</a></li>
+        <li><a href="#quem-somos">A Equipe</a></li>
+        <li><a href="#contato">Localização</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Atuação</h5>
+      <ul>
+        <li><a href="#especialidades">Direito do Trabalho</a></li>
+        <li><a href="#especialidades">Direito Civil</a></li>
+        <li><a href="#especialidades">Famílias & Sucessões</a></li>
+        <li><a href="#especialidades">Previdenciário</a></li>
+        <li><a href="#especialidades">Estrangeiros</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Contato</h5>
+      <ul>
+        <li><a href="https://wa.me/5548999999999">WhatsApp</a></li>
+        <li><a href="#contato">Formulário</a></li>
+        <li><a href="#contato">Videoconferência</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Almeida Kehl Advogados Associados. Todos os direitos reservados.</p>
+    <a href="https://skull-studio.vercel.app/" target="_blank" class="footer-oab" style="margin-left: 12px; border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.4); text-decoration: none;">
+      Desenvolvido por Skull Studio
+    </a>
+  </div>
+</footer>
+
+<!-- ══ WHATSAPP ══ -->
+<a href="https://wa.me/5548999999999" class="wa-btn" target="_blank" aria-label="WhatsApp">
+  <div class="wa-pulse"></div>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.335 4.963L2 22l5.233-1.371a9.944 9.944 0 004.779 1.218h.004c5.506 0 9.99-4.478 9.99-9.985C22.007 6.478 17.521 2 12.012 2zm5.518 14.266c-.232.65-1.352 1.244-1.87 1.273-.519.03-.536.39-3.377-.704-2.84-1.093-4.548-3.955-4.683-4.137-.135-.182-1.1-1.463-1.1-2.79 0-1.328.696-1.98.943-2.25.247-.27.54-.337.72-.337l.519.01c.166.007.39-.063.61.465.223.535.756 1.849.822 1.983.067.135.11.293.022.472-.087.18-.13.293-.26.452-.128.158-.27.352-.385.472-.13.134-.264.278-.113.546.15.267.669 1.104 1.435 1.787.985.878 1.817 1.148 2.073 1.276.257.127.407.107.558-.064.15-.17.642-.748.814-1.005.17-.257.34-.214.573-.129.232.086 1.477.696 1.73.823.252.127.42.19.483.297.062.106.062.615-.17 1.266z"/>
+  </svg>
+</a>
+
+<!-- ══ MODAL DE BIOGRAFIA ══ -->
+<div class="bio-modal-overlay" id="bioModal">
+  <div class="bio-modal-content">
+    <button class="bio-modal-close" onclick="closeBio()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    
+    <div class="bio-modal-header">
+      <img src="" alt="" class="bio-modal-img" id="modalImg">
+      <div>
+        <p class="bio-modal-role" id="modalRole"></p>
+        <h3 class="bio-modal-title" id="modalName"></h3>
+        <p class="bio-modal-oab" id="modalOab"></p>
+      </div>
+    </div>
+    
+    <div class="bio-modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ══ JS ══ -->
+<script>
+  // Header scroll
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // Mobile nav
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+
+    hamburger.querySelectorAll('span').forEach(s => {
+      s.style.background = isOpen ? '#fff' : '';
+    });
+  });
+
+  mobileNav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+      hamburger.querySelectorAll('span').forEach(s => s.style.background = '');
+    });
+  });
+
+  // Bio Modal Logic
+  const modal = document.getElementById('bioModal');
+  const modalImg = document.getElementById('modalImg');
+  const modalName = document.getElementById('modalName');
+  const modalRole = document.getElementById('modalRole');
+  const modalOab = document.getElementById('modalOab');
+  const modalBody = document.getElementById('modalBody');
+
+  function openBio(el) {
+    const imgUrl = el.querySelector('.profile-img').src;
+    const name = el.querySelector('.profile-name').innerText;
+    const role = el.querySelector('.profile-role').innerText;
+    const oab = el.querySelector('.profile-oab').innerText;
+    const fullBioHTML = el.querySelector('.profile-full-bio').innerHTML;
+
+    modalImg.src = imgUrl;
+    modalName.innerText = name;
+    modalRole.innerText = role;
+    modalOab.innerText = oab;
+    modalBody.innerHTML = fullBioHTML;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeBio() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  modal.addEventListener('click', (e) => {
+    if(e.target === modal) closeBio();
+  });
+  
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape' && modal.classList.contains('active')) closeBio();
+  });
+
+  // Counter Animation
+  const counters = document.querySelectorAll('.counter');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        const target = +entry.target.getAttribute('data-target');
+        let count = 0;
+        const inc = target / 40;
+        const updateCount = () => {
+          count += inc;
+          if(count < target) {
+            entry.target.innerText = Math.ceil(count);
+            setTimeout(updateCount, 40);
+          } else {
+            entry.target.innerText = target;
+          }
+        };
+        updateCount();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  counters.forEach(counter => {
+    observer.observe(counter);
+  });
+  
+  // Intersection observer — reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>

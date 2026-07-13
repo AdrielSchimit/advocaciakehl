@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="181" height="207" viewBox="0 0 181 207" role="img" aria-label="Logo vetorizada">
+
+  <defs>
+    <linearGradient id="gradLeft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C76834"/>
+      <stop offset="25%" stop-color="#B6572C"/>
+      <stop offset="50%" stop-color="#A84624"/>
+      <stop offset="75%" stop-color="#97321C"/>
+      <stop offset="100%" stop-color="#8F2819"/>
+    </linearGradient>
+    <linearGradient id="gradRight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D2C46E"/>
+      <stop offset="25%" stop-color="#CBBA70"/>
+      <stop offset="50%" stop-color="#BCA46E"/>
+      <stop offset="75%" stop-color="#B69D6D"/>
+      <stop offset="100%" stop-color="#AC916B"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="92" height="207" fill="url(#gradLeft)"/>
+  <rect x="92" y="33" width="89" height="174" fill="url(#gradRight)"/>
+
+  <g fill="#FFFFFF">
+    <circle cx="92.3" cy="50.4" r="11"/>
+    <path d="
+      M92,200.4
+      L80.9,88
+      C74,90.2 66,91.6 59,91.2
+      C53.8,91 49.4,90 46.7,89
+      C54,88.8 62.5,86.8 69.9,83
+      C77,79.4 82.3,73.5 86,68.1
+      C88.5,86 90.3,108 92,128.2
+      C93.8,108 95.4,85 97.3,68
+      C101.2,73.4 107.4,79.8 116.3,84
+      C124.4,87.7 132.7,89 140.4,88
+      C137,89.8 130.5,91.1 124,91.2
+      C116.7,91.3 109.7,89.3 103.2,87.4
+      L93.3,193
+      Z"/>
+    <path d="M43,92.4 L70.6,150.8 L44,112.6 L16.3,149.8 Z"/>
+    <path d="M142,91.7 L168,149 L142,112.5 L114.4,150 Z"/>
+    <path d="
+      M73.2,157.8
+      C71.3,164.9 61.7,170.4 51.2,173.4
+      C37.5,176 23,172.4 15.7,164.1
+      C13.8,161.9 12.8,159.2 13,157.4
+      C18.8,162 29.7,165.4 43,166.9
+      C54.1,166.6 64.7,163.3 73.2,157.8
+      Z"/>
+    <path d="
+      M171.4,158
+      C169.4,164.8 160.8,170.1 150,173.4
+      C136.2,176 122.1,172.2 114.7,164.9
+      C112.8,162.9 111.5,160.2 111.3,158
+      C117.1,162.1 128.2,165.4 139,166.8
+      C149.6,166.6 162.5,163.3 171.4,158
+      Z"/>
+  </g>
+
+</svg>
