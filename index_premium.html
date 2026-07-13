@@ -383,6 +383,10 @@
     }
     .profile-entry:hover .profile-read-more { color: var(--gold); gap: 10px; }
 
+    .team-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; padding-top: 24px;}
+    @media (max-width: 1100px) { .team-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 768px) { .team-grid { grid-template-columns: 1fr; } }
+
     /* ══════════════════════════════════════════
        MODAL DE BIOGRAFIA
     ══════════════════════════════════════════ */
@@ -626,10 +630,29 @@
     @keyframes waPulse { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(1.75); opacity: 0; } }
 
     /* ══════════════════════════════════════════
+       REVIEWS
+    ══════════════════════════════════════════ */
+    .reviews-section { padding-top: 80px; padding-bottom: 80px; background: var(--ivory); }
+    .reviews-header { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 56px; }
+    .google-stars { color: #FABB05; font-size: 24px; letter-spacing: 2px; margin-bottom: 8px; margin-top: 16px; }
+    .google-rating { font-size: 22px; font-weight: 600; color: var(--ink); }
+    .google-rating span { font-size: 14px; font-weight: 400; color: var(--ink-soft); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+    .review-card {
+      background: var(--white); border: 1px solid var(--border-gold); padding: 32px; border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: var(--t);
+    }
+
+    /* ══════════════════════════════════════════
        REVEAL & RESPONSIVE
     ══════════════════════════════════════════ */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.75s var(--ease), transform 0.75s var(--ease); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .team-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px; margin-top: 60px; max-width: 1200px; margin-left: auto; margin-right: auto;
+    }
 
     @media (max-width: 1100px) {
       .manifesto-inner, .about-grid, .contact-layout { grid-template-columns: 1fr; gap: 60px; }
@@ -762,24 +785,20 @@
 </section>
 
 <!-- ══ QUEM SOMOS / EQUIPE ══ -->
-<section id="quem-somos">
-  <div class="about-grid">
-    <div class="about-sticky">
-      <div class="eyebrow reveal">Nossa Equipe</div>
-      <h2 class="section-title reveal" style="transition-delay:0.1s">As Advogadas do Escritório</h2>
-      <p class="about-desc reveal" style="transition-delay:0.2s">
-        Uma equipe feminina de alta performance, formada por advogadas com OAB ativa em Santa Catarina, Paraná, Mato Grosso do Sul e São Paulo, unidas pelo compromisso com a excelência jurídica.
-      </p>
-      <p class="about-desc reveal" style="transition-delay:0.25s">
-        Atendemos clientes nacionais e estrangeiros de forma presencial em Jurerê Internacional, Florianópolis, e remotamente em todo o Brasil.
-      </p>
-      <a href="#contato" class="btn-about reveal" style="transition-delay:0.3s">
-        Agendar Consulta
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
-      </a>
+<section id="quem-somos" style="padding: 100px 5%; background: var(--cream);">
+  <div style="text-align: center; max-width: 800px; margin: 0 auto 60px;">
+    <div class="eyebrow reveal" style="justify-content:center;">Nossa Equipe</div>
+    <h2 class="section-title reveal" style="transition-delay:0.1s">As Advogadas do Escritório</h2>
+    <p class="section-body reveal" style="transition-delay:0.2s" style="color:var(--muted); margin: 24px 0;">
+      Uma equipe feminina de alta performance, formada por advogadas com OAB ativa em Santa Catarina, Paraná, Mato Grosso do Sul e São Paulo, unidas pelo compromisso com a excelência jurídica.<br><br>
+      Atendemos clientes nacionais e estrangeiros de forma presencial em Jurerê Internacional, Florianópolis, e remotamente em todo o Brasil.
+    </p>
+    <div style="display:flex; justify-content:center; margin-top:32px;">
+      <a href="https://wa.me/5548988221886" target="_blank" class="btn-primary-dark reveal" style="transition-delay:0.3s; padding:16px 28px;">Agendar Consulta</a>
     </div>
+  </div>
 
-    <div class="about-right">
+  <div class="team-grid">
       <!-- Silvana -->
       <div class="profile-entry reveal" onclick="openBio(this)">
         <img src="wp-content/uploads/2024/04/silvana.jpg" alt="Silvana Almeida Kehl" class="profile-img" onerror="this.style.display='none'">
@@ -860,7 +879,8 @@
           <p>Assessora Jurídica com atuação nas áreas Cível e de Família, com ênfase em inventários e partilhas. Contribui para o desenvolvimento de soluções jurídicas eficientes e alinhadas às necessidades de cada cliente.</p>
         </div>
       </div>
-    </div>
+      </div>
+
   </div>
 </section>
 
@@ -1007,41 +1027,7 @@
   </div>
 </div>
 
-<!-- ══ AVALIAÇÕES ══ -->
-<section id="avaliacoes" class="reviews-section">
-  <div class="reviews-header reveal">
-    <div class="eyebrow">Reputação de Excelência</div>
-    <h2 class="section-title">Aprovado por nossos clientes</h2>
-    <div class="google-stars">★★★★★</div>
-    <div class="google-rating">5,0 <span>(162 avaliações no Google)</span></div>
-  </div>
-  
-  <div class="reviews-grid">
-    <div class="review-card reveal" style="transition-delay:0.1s">
-      <div class="reviewer-info">
-        <div class="reviewer-avatar">S</div>
-        <div class="reviewer-details">
-          <h5>sonia siqueira</h5>
-          <p>2 avaliações</p>
-        </div>
-      </div>
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Só tenho elogios e agradecimento a Dra Silvana, sempre educada e atenciosamente, seu profissionalismo é implacável, super indico, equipe nota 10!"</p>
-    </div>
-    
-    <div class="review-card reveal" style="transition-delay:0.2s">
-      <div class="reviewer-info">
-        <div class="reviewer-avatar" style="background: url('https://ui-avatars.com/api/?name=Ona+Godoy&background=random') center/cover;">O</div>
-        <div class="reviewer-details">
-          <h5>ona godoy</h5>
-          <p>7 avaliações · 4 fotos</p>
-        </div>
-      </div>
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">"Excelente equipe de profissionais!! Sempre prontos para ajudar com um serviço de primeira qualidade!! Eu os recomendo fortemente. A advogada Silvana é uma mulher poderosa, eficiente, maravilhosa e um ser humano excelente!! Grato pelo seu trabalho e apoio inabalável 👏👏👏 Obrigado 🙏"</p>
-    </div>
-  </div>
-</section>
+
 
 <!-- ══ CONTATO ══ -->
 <section id="contato" style="background:var(--cream);">
@@ -1130,6 +1116,96 @@
 <div style="display: flex; flex-direction: column; position: relative;">
   <iframe src="https://maps.google.com/maps?q=R.+das+Algas,+173+-+Sl+04+-+Jurer%C3%AA+Internacional,+Florian%C3%B3polis+-+SC,+88053-505&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
+
+<!-- ══ AVALIAÇÕES ══ -->
+<section id="avaliacoes" class="reviews-section" style="background:var(--ivory);">
+  <div class="reviews-header reveal">
+    <div class="eyebrow">Reputação de Excelência</div>
+    <h2 class="section-title">Aprovado por nossos clientes</h2>
+    <div class="google-stars">★★★★★</div>
+    <div class="google-rating">5,0 <span>(162 avaliações no Google)</span></div>
+  </div>
+  
+  <div style="padding: 0 5%; max-width: 1400px; margin: 0 auto;">
+    <div class="reviews-grid">
+      <!-- Jair -->
+      <div class="review-card reveal" style="transition-delay:0.1s">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar" style="background:#555;">J</div>
+          <div class="reviewer-details">
+            <h5>Jair Domingos Gonçalves</h5>
+            <p>10 avaliações</p>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Serviço prestado com excelência! Super indico!"</p>
+      </div>
+
+      <!-- Sandra -->
+      <div class="review-card reveal" style="transition-delay:0.2s">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar" style="background:#d84315;">S</div>
+          <div class="reviewer-details">
+            <h5>sandra maria goncalves dandra</h5>
+            <p>11 avaliações</p>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Nossa me falta palavras !! Só tenho agradecer e indicar o trabalho da Dra Silvana e Dra Juliana. Foram muito atenciosas. Advogadas de confiança. Gratidão e muito obrigado. Cinco estrelas e pouco, vcs merecem mas 🌟 ..."</p>
+      </div>
+
+      <!-- Ona -->
+      <div class="review-card reveal" style="transition-delay:0.3s">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar" style="background:#673ab7;">O</div>
+          <div class="reviewer-details">
+            <h5>ona godoy</h5>
+            <p>7 avaliações · 4 fotos</p>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Excelente equipe de profissionais!! Sempre prontos para ajudar com um serviço de primeira qualidade!! Eu os recomendo fortemente. A advogada Silvana é uma mulher poderosa, eficiente, maravilhosa e um ser humano excelente!! Grato pelo seu trabalho e apoio inabalável 👏👏👏 Obrigado 🙏"</p>
+      </div>
+
+      <!-- Outros -->
+      <div class="review-card reveal" style="transition-delay:0.4s">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar" style="background:#2196f3;">A</div>
+          <div class="reviewer-details">
+            <h5>Cliente Anônimo</h5>
+            <p>Local Guide</p>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Dra Silvana e sua equipe são profissionais de altíssimo nível."</p>
+      </div>
+
+      <div class="review-card reveal" style="transition-delay:0.5s">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar" style="background:#e91e63;">G</div>
+          <div class="reviewer-details">
+            <h5>Gabriel</h5>
+            <p>3 avaliações</p>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Fui muito bem atendido e meu processo foi resolvido num ótimo prazo!"</p>
+      </div>
+
+      <div class="review-card reveal" style="transition-delay:0.6s">
+        <div class="reviewer-info">
+          <div class="reviewer-avatar" style="background:#009688;">C</div>
+          <div class="reviewer-details">
+            <h5>Cliente Imobiliária</h5>
+            <p>4 avaliações</p>
+          </div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Nos ajuda a solucionar várias situações em nossa imobiliária."</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══ FOOTER ══ -->
 <footer>
