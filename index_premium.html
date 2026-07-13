@@ -339,11 +339,11 @@
     .about-right { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 32px; }
 
     .profile-entry {
-      display: flex; flex-direction: column; gap: 20px;
+      display: flex; flex-direction: column; gap: 16px;
       padding: 24px; border: 1px solid rgba(201,163,87,0.15); border-radius: 6px;
-      background: var(--white);
-      align-items: start; transition: var(--t);
-      cursor: pointer;
+      background: var(--white); height: 100%;
+      align-items: stretch; transition: var(--t);
+      cursor: pointer; justify-content: space-between;
     }
     .profile-entry:hover { background: rgba(201,163,87,0.03); border-color: rgba(201,163,87,0.3); transform: translateY(-4px); box-shadow: var(--shadow-sm); }
 
@@ -353,7 +353,7 @@
     }
     .profile-entry:hover .profile-img { transform: scale(1.02); }
 
-    .profile-info { padding-top: 4px; }
+    .profile-info { padding-top: 4px; display: flex; flex-direction: column; flex-grow: 1; }
 
     .profile-name {
       font-family: 'Cormorant Garamond', serif;
@@ -367,21 +367,21 @@
     }
 
     .profile-oab {
-      font-size: 12px; color: var(--muted-light); font-weight: 400; margin-bottom: 16px;
+      font-size: 12px; color: var(--muted-light); font-weight: 400; margin-bottom: 24px;
     }
 
     .profile-rule {
-      width: 28px; height: 1px; background: var(--gold); margin-bottom: 16px; opacity: 0.5;
+      display: none;
     }
 
     .profile-bio {
-      font-size: 14px; color: var(--muted); font-weight: 300; line-height: 1.75;
+      display: none;
     }
     
     .profile-read-more {
-      margin-top: 12px; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); display: inline-flex; align-items: center; gap: 6px;
+      margin-top: auto; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding-top: 16px; border-top: 1px solid rgba(201,163,87,0.15); width: 100%; transition: var(--t);
     }
-    .profile-entry:hover .profile-read-more { color: var(--gold); gap: 10px; }
+    .profile-entry:hover .profile-read-more { color: var(--gold); gap: 10px; border-top-color: rgba(201,163,87,0.5); }
 
     .team-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; padding-top: 24px;}
     @media (max-width: 1100px) { .team-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -786,10 +786,10 @@
 
 <!-- ══ QUEM SOMOS / EQUIPE ══ -->
 <section id="quem-somos" style="padding: 100px 5%; background: var(--cream);">
-  <div style="text-align: center; max-width: 800px; margin: 0 auto 60px;">
+  <div style="text-align: center; max-width: 1100px; margin: 0 auto 60px;">
     <div class="eyebrow reveal" style="justify-content:center;">Nossa Equipe</div>
     <h2 class="section-title reveal" style="transition-delay:0.1s">As Advogadas do Escritório</h2>
-    <p class="section-body reveal" style="transition-delay:0.2s" style="color:var(--muted); margin: 24px 0;">
+    <p class="section-body reveal" style="transition-delay:0.2s; color:var(--muted); margin: 24px auto; max-width: 800px;">
       Uma equipe feminina de alta performance, formada por advogadas com OAB ativa em Santa Catarina, Paraná, Mato Grosso do Sul e São Paulo, unidas pelo compromisso com a excelência jurídica.<br><br>
       Atendemos clientes nacionais e estrangeiros de forma presencial em Jurerê Internacional, Florianópolis, e remotamente em todo o Brasil.
     </p>
